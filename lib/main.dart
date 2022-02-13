@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:playground/bloc/search_cep_view.dart';
 import 'package:playground/testes/custom_painter.dart';
 import 'package:playground/testes/listview_automatic.dart';
+import 'package:playground/testes/sliver_with_appbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ListViewAumatic(),
+      home: const SearchCepBLocView(),
     );
   }
 }

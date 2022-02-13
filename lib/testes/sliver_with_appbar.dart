@@ -13,6 +13,7 @@ class _SliverWithAppbarState extends State<SliverWithAppbar> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
+        title: Text('teste'),
       ),
       body: DefaultTabController(
         length: 2,
