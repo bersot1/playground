@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:playground/bloc/search_cep_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:playground/bloc/search_cep_states.dart';
 
 class SearchCepBlocFlutterBloc extends Bloc<String, ISearchCepStatus> {
   SearchCepBlocFlutterBloc() : super(SearchCepSuccess({}));
