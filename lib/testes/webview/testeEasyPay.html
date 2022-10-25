@@ -1,0 +1,58 @@
+<html>
+      <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://api.test.easypay.pt/assets/checkout/js/sdk/1.2.1/checkout.js"></script>
+        
+      </head>
+      
+        <body style="background-color:#fff;height:100vh ">
+
+        <div id="easypay-checkout"></div>
+
+          <button type="button" class="btn btn-info" onclick="hello()" style="width: 210px">
+              Authors
+            </button>
+
+          <script>
+           document.addEventListener('DOMContentLoaded', function () {
+            console.log('document is ready. I can sleep now');
+            hello();
+            
+        });
+
+          function hello() {
+            console.log('teste metodo hello');
+
+            var manifest = {
+                "id": "dbfe3c6d-ba60-41a0-8844-7ebccf57669f",
+                "session": "M_FAQNQtZ8xIPWFSUIlYNTrkgno8OQLUj_yx5S8dnvh9Kv4UrxOfaNol3IFATC9V0TZgBZnQLISR5F9qWZD5eGvlU0QbWMpb74Kq-_ZXlJZLHtpOr8RdPrfn6hKrE3Z-8qL8otEzkOqui-H7Cwop_xFmYQlSAhX931O25kW-xGzJKQXKiNKB0v5g0H44Wm5K9hH9Ond476Ny5ky_dUOl-vo2aiujqM8ugzRFqxA84k8LrWZ5q1sIJbw_bGOpKYyazxbw9ZbVmAbliXOeVvZYZil11Pg1ezZDMRn3ogR9pSwxL_bq_SvewyewH3Q9Rqq_uT55TS3kqumiQyqyfN7I4MH7vSq006Pq3TQsBmfDNWAdtqlLst_YYpFxxKAXxk1lUt6Nd-PlfZ6NFuVJ3iKejUx62-iqBOh6S_XPBIuzwDWw4xc6LsAaBid8_rgtEDcwZZd7DrUazAu1DK-_XBSNP8rPI0bOmWd66tzDrmPoflf2r6xzco05s619KcOsaJ5zFtbHDkxMGcQ4o4xCoXzxLknqwjuAa1S-mBxjFqg0Ajg=",
+                "config": null
+            };
+
+            EasypayCheckoutUI.setup(manifest).then(function (modal) {
+              modal.onCancel(function () {
+                // This is triggered on popup close, if the checkout is not complete
+                alert('The checkout was canceled!');
+              });
+          
+              modal.onClose(function () {
+                // This is triggered on popup close, if the checkout is complete
+                alert('The checkout was closed!');
+              });
+          
+              modal.onComplete(function (data) {
+                alert('The checkout was finished');
+          
+                console.log(data)
+              });
+            });
+
+            document.getElementById('easypay-checkout').click();
+          }
+
+         
+          </script>
+        </body>
+      </html>

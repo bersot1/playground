@@ -9,11 +9,17 @@ class GradientImage extends StatefulWidget {
 
 class _GradientImageState extends State<GradientImage> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        actions: [],
       ),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,

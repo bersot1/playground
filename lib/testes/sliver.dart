@@ -13,30 +13,30 @@ class _SliverViewState extends State<SliverView> {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
-            floating: true,
-            pinned: true,
-            stretch: true,
-            expandedHeight: 300,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text('SliverAppBar'),
-              background: Column(
-                children: [
-                  Text('123'),
-                  Text('123'),
-                  Text('123'),
-                  Text('123'),
-                  Text('123'),
-                  Text('123'),
-                  Text('123'),
-                  Text('123'),
-                  Text('123'),
-                  Text('123'),
-                  Text('123'),
-                ],
-              ),
-            ),
-          ),
+          // SliverAppBar(
+          //   floating: true,
+          //   pinned: true,
+          //   stretch: true,
+          //   expandedHeight: 300,
+          //   flexibleSpace: FlexibleSpaceBar(
+          //     title: Text('SliverAppBar'),
+          //     background: Column(
+          //       children: [
+          //         Text('123'),
+          //         Text('123'),
+          //         Text('123'),
+          //         Text('123'),
+          //         Text('123'),
+          //         Text('123'),
+          //         Text('123'),
+          //         Text('123'),
+          //         Text('123'),
+          //         Text('123'),
+          //         Text('123'),
+          //       ],
+          //     ),
+          //   ),
+          // ),
           SliverFillRemaining(
             child: Column(
               children: [

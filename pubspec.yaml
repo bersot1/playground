@@ -39,10 +39,14 @@ dependencies:
   flutter_colorpicker: ^1.0.2
   dio:
   rxdart: ^0.27.3
-  flutter_bloc: ^8.0.1
-  permission_handler: 9.0.2
+  flutter_bloc: 7.2.0
+  # permission_handler: 9.0.2
   pin_code_fields: ^7.4.0
-
+  flutter_webrtc:
+  flutter_background: ^1.1.0
+  web_socket_channel: ^2.2.0
+  webview_flutter: ^2.0.16
+  
   
 
 dev_dependencies:

@@ -1,10 +1,29 @@
-import 'package:flutter/material.dart';
-import 'package:playground/testes/gradient_image.dart';
+import 'dart:core';
+import 'dart:io';
 
-import 'testes/code_input.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_background/flutter_background.dart';
+import 'package:playground/testes/video_call_webrtc.dart';
+import 'package:playground/testes/webview/webview_teste.dart';
+
+import 'testes/bloc_code_input/code_input_keyboard_setstate.dart';
 
 void main() {
+  // startForegroundService();
+  HttpOverrides.global = MyHttpOverrides();
   runApp(const MyApp());
+}
+
+Future<bool> startForegroundService() async {
+  const androidConfig = FlutterBackgroundAndroidConfig(
+    notificationTitle: 'Title of the notification',
+    notificationText: 'Text of the notification',
+    notificationImportance: AndroidNotificationImportance.Default,
+    notificationIcon:
+        AndroidResource(name: 'background_icon', defType: 'drawable'), // Default is ic_launcher from folder mipmap
+  );
+  await FlutterBackground.initialize(androidConfig: androidConfig);
+  return FlutterBackground.enableBackgroundExecution();
 }
 
 class MyApp extends StatefulWidget {
@@ -15,75 +34,29 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool isError = false;
-  TextEditingController textEditingController = TextEditingController();
-  GlobalKey<FormState> formStateKey = GlobalKey<FormState>();
-  FocusNode focusNode = FocusNode();
-
   @override
   void initState() {
     super.initState();
   }
 
   @override
+  void dispose() async {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
-      home: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 100,
-            ),
-            CodeInput(
-              focusNode: focusNode,
-              formStateglobalKey: formStateKey,
-              textEditingController: textEditingController,
-              validator: (value) {
-                if (value == '123456') {
-                  isError = true;
-                  setState(() {});
-                }
-              },
-              isStateError: isError,
-              lenght: 6,
-              title: const Text('Enter your activation code'),
-              subTitle: const Text('You have 3 attempts. The code is valid for 20min'),
-              titleError: const Text(
-                'Enter your activation code',
-                style: TextStyle(color: Colors.red),
-              ),
-              subTitleError: Row(
-                children: const [
-                  Icon(
-                    Icons.error,
-                    color: Colors.red,
-                    size: 13,
-                  ),
-                  Flexible(
-                    child: Text(
-                      'The code is incorrect.Please verify or request a new one.',
-                      style: TextStyle(color: Colors.red),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(child: Container()),
-            OutlinedButton(
-              onPressed: () {
-                if (formStateKey.currentState!.validate()) {
-                  print('error');
-                } else {
-                  print('done');
-                }
-              },
-              child: Text('1234'),
-            )
-          ],
-        ),
-      ),
+      home: VideoCallWebrtc(),
     );
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
   }
 }
