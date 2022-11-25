@@ -19,7 +19,7 @@ class _GradientImageState extends State<GradientImage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        actions: [],
+        actions: const [],
       ),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
@@ -41,21 +41,21 @@ class _GradientImageState extends State<GradientImage> {
                   height: 200,
                   width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
-                    // boxShadow: [
-                    //   BoxShadow(
-                    //     blurRadius: 2, color: Colors.transparent,
-                    //     // offset: Offset(2, 1),
-                    //   )
-                    // ],
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Colors.transparent,
-                        Colors.white,
-                      ],
-                    ),
-                  ),
+                      // boxShadow: [
+                      //   BoxShadow(
+                      //     blurRadius: 2, color: Colors.transparent,
+                      //     // offset: Offset(2, 1),
+                      //   )
+                      // ],
+                      // gradient: LinearGradient(
+                      //   begin: Alignment.topCenter,
+                      //   end: Alignment.bottomCenter,
+                      //   colors: [
+                      //     Colors.transparent,
+                      //     Colors.white,
+                      //   ],
+                      // ),
+                      ),
                   child: Column()),
             ),
             Positioned(
@@ -74,7 +74,7 @@ class _GradientImageState extends State<GradientImage> {
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      colors: [
+                      colors: const [
                         Colors.transparent,
                         Colors.white,
                       ],
@@ -162,13 +162,13 @@ class _GradientImageState extends State<GradientImage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Center(child: Text('Easily access your agreement 24/7')),
-                    Center(
+                    const Center(child: Text('Easily access your agreement 24/7')),
+                    const Center(
                       child: Text(
                           'Check yout monthly payment dates and get daster access to your financial services via the My BMW app'),
                     ),
-                    Divider(),
-                    Center(child: ElevatedButton(onPressed: () {}, child: Text('ADD AGREEMENT')))
+                    const Divider(),
+                    Center(child: ElevatedButton(onPressed: () {}, child: const Text('ADD AGREEMENT')))
                   ],
                 ),
               ),

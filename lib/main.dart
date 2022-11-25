@@ -3,14 +3,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_background/flutter_background.dart';
-import 'package:playground/testes/video_call_webrtc.dart';
-import 'package:playground/testes/webview/webview_teste.dart';
+import 'package:playground/testes/text_recognizer_firebase/text_recognizer_page.dart';
 
-import 'testes/bloc_code_input/code_input_keyboard_setstate.dart';
-
-void main() {
+void main() async {
   // startForegroundService();
-  HttpOverrides.global = MyHttpOverrides();
   runApp(const MyApp());
 }
 
@@ -48,7 +44,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
-      home: VideoCallWebrtc(),
+      home: TextRecognizerPage(),
     );
   }
 }

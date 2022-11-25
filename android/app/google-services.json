@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "189222843086",
+    "project_id": "playground-be7df",
+    "storage_bucket": "playground-be7df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189222843086:android:57e2222a10ba0f3230d69f",
+        "android_client_info": {
+          "package_name": "com.example.playground"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189222843086-ribv4h5c0tg2d2qsolfj2ikt7vggli5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwdIkdHsxOF3VPQcPueSTo50X7MHeM9sc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189222843086-ribv4h5c0tg2d2qsolfj2ikt7vggli5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

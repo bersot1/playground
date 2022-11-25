@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:playground/bloc/search_cep_bloc.dart';
-import 'package:playground/bloc/search_cep_bloc_rxdart.dart';
 import 'package:playground/bloc/search_cep_states.dart';
 import 'package:playground/bloc/search_cep_with_flutter_bloc.dart';
 
@@ -94,8 +92,7 @@ class _SearchCepBLocViewState extends State<SearchCepBLocView> {
                 }
 
                 if (state is SearchCepLoading) {
-                  return const Expanded(
-                      child: Center(child: CircularProgressIndicator()));
+                  return Expanded(child: const Center(child: CircularProgressIndicator()));
                 }
 
                 state = state as SearchCepSuccess;

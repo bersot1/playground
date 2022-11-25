@@ -14,7 +14,7 @@ class _ListViewAumaticState extends State<ListViewAumatic> {
   late Timer timer;
   List<String> list = [];
 
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   _scrollToBottom() {
     _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
@@ -36,7 +36,7 @@ class _ListViewAumaticState extends State<ListViewAumatic> {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance!.addPostFrameCallback((_) => _scrollToBottom());
+    WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToBottom());
     return Scaffold(
       appBar: AppBar(),
       body: ListView.builder(
