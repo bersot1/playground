@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_background/flutter_background.dart';
 import 'package:playground/testes/text_recognizer_firebase/text_recognizer_page.dart';
+import 'package:playground/testes/video_player/video_player_main.dart';
 
 void main() async {
   // startForegroundService();
@@ -15,8 +16,9 @@ Future<bool> startForegroundService() async {
     notificationTitle: 'Title of the notification',
     notificationText: 'Text of the notification',
     notificationImportance: AndroidNotificationImportance.Default,
-    notificationIcon:
-        AndroidResource(name: 'background_icon', defType: 'drawable'), // Default is ic_launcher from folder mipmap
+    notificationIcon: AndroidResource(
+        name: 'background_icon',
+        defType: 'drawable'), // Default is ic_launcher from folder mipmap
   );
   await FlutterBackground.initialize(androidConfig: androidConfig);
   return FlutterBackground.enableBackgroundExecution();
@@ -44,7 +46,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
-      home: TextRecognizerPage(),
+      home: VideoPlayerMain(),
     );
   }
 }
@@ -53,6 +55,7 @@ class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
     return super.createHttpClient(context)
-      ..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }
